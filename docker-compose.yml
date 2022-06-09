@@ -1,0 +1,17 @@
+version: "3"
+services:
+  emqx:
+    container_name: emqx
+    restart: always
+    build: .
+    environment:
+      - EMQX_LOADED_PLUGINS="emqx_recon,emqx_retainer,emqx_management,emqx_dashboard,emqx_auth_http,emqx_auth_mnesia,emqx_auth_username"
+      - EMQX_DASHBOARD__DEFAULT_USER__LOGIN=phinht
+      - EMQX_DASHBOARD__DEFAULT_USER__PASSWORD=phinht@2022
+      - EMQX_NODE__MAX_PORTS=65535
+      - EMQX_MQTT__MAX_PACKET_SIZE=16MB
+    ports:
+     - 18083:18083
+     - 18830:1883
+     - 8080:8081
+     - 8883:8883
