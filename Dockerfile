@@ -1,6 +1,6 @@
 FROM emqx
 
-MAINTAINER Rainbow<meomeo@gmail.com>
+MAINTAINER tungnh<nguyenhuytung@gmail.com>
 
 # Copy new authen config file and enable authen mode
 COPY emqx.conf /opt/emqx/etc/emqx.conf
